@@ -108,6 +108,12 @@ mod imp {
             "removed Kaku backup directory",
             &mut report,
         )?;
+        remove_dir_if_exists(
+            config_home().join("kaku.lua"),
+            "removed Kaku config",
+            &mut report,
+        )?;
+
         remove_empty_kaku_config_dir(&mut report)?;
 
         report.print();
